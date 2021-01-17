@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import Clock from "./Clock"
 
 function App() {
-  useEffect(() => {
-    console.log("useEffect called");
-  });
+  const [showClock, setShowClock] = useState(true);
 
-  console.log("Component rendering");
-
-  return <button>Click Me</button>;
+  
+  return (
+    <div>
+      {showClock ? <Clock /> : null}
+      <button onClick={() => setShowClock(false)}>Hide Clock</button>
+    </div>
+  );
 }
 
 export default App;
